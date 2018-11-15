@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+  </head>
+  <body>
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        Shopping Bag
+      </div>
+      <!-- Product #1 -->
+      <div class="item" id="item1">
+        <div class="buttons">
+          <!-- <span class="delete-btn"></span> -->
+          <a href="#" class="delete-btn" onclick="remove(1);"> 
+            <i class="fa fa-remove" style="font-size:24px"></i>
+          </a>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="https://styles.ua/content/images/39/64054048309723.jpg" alt="" />
+        </div>
+
+        <div class="description">
+          <span>Common Projects</span>
+          <span>Bball High</span>
+          <span>White</span>
+        </div>
+        
+         <div class="quantity">
+          <button id='plus1' class="plus-btn" onclick="plus(1);multiply(1);">
+            <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+          </button>
+          <h6 id='compteur1'class="display">0</h6>
+          <button id='moins1' class="minus-btn" onclick="moins(1);multiply(1);">
+            <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+          </button>
+          <div id="price1" class="total-price display">600</div>
+            
+        </div>
+        <div><p><p class="TOTAL1" id="TOTAL1"></p></p></div>
+
+      </div>
+
+      <!-- Product #2 -->
+      <div class="item" id="item2">
+        <div class="buttons">
+          <!-- <span class="delete-btn"></span> -->
+          <a href="#" class="delete-btn" onclick="remove(2)"> 
+            <i class="fa fa-remove" style="font-size:24px"></i>
+          </a>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="https://cdn.sarenza.net/static/_img/productsV4/0000118462/0000118462_335609_11.jpg?201808021051" alt=""/>
+        </div>
+
+        <div class="description">
+          <span>Maison Margiela</span>
+          <span>Future Sneakers</span>
+          <span>White</span>
+        </div>
+
+        <div class="quantity">
+                <button id='plus2' class="plus-btn" onclick="plus(2);multiply(2);">
+                  <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <h6 id='compteur2' class="display">0</h6>
+                <button id='moins2' class="minus-btn" onclick="moins(2);multiply(2);">
+                  <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+                <div id="price2" class="total-price display">400</div>       
+        </div>
+
+        <div><p><p class="TOTAL2" id="TOTAL2"></p></p></div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="item" id="item3">
+        <div class="buttons">
+          <!-- <span class="delete-btn"></span> -->
+          <a href="#" class="delete-btn" onclick="remove(3)"> 
+            <i class="fa fa-remove" style="font-size:24px"></i>
+          </a>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="https://cdn.sarenza.net/static/_img/productsV4/0000176587/0000176587_335613_11.jpg?201807301144" alt="" />
+        </div>
+
+        <div class="description">
+          <span>Our Legacy</span>
+          <span>Brushed Scarf</span>
+          <span>Brown</span>
+        </div>
+
+        <div class="quantity">
+                <button id='plus3' class="plus-btn" onclick="plus(3);multiply(3);">
+                  <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <h6 id='compteur3' class="display" >0</h6>
+                <button id='moins3' class="minus-btn" onclick="moins(3);multiply(3);">
+                  <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+                <div id="price3" class="total-price display">300</div>  
+        </div>
+        <div><p><p class="TOTAL3" id="TOTAL3"></p></p></div>
+      </div>
+       
+    
+    </div>
+    <div class="shopping-cart2">
+        <div class="title">
+            TOTAL ITEMS
+        </div>
+      <div class="title" id="TOTAL5">
+      </div>
+      <div class="title">
+          $
+      </div>
+    </div>
+    <!-- ------------- -->
+    <div class="shopping-cart3">
+    <!-- <button class="btn btn-outline-primary" id="more_btn"  type="button">Plus Items </button> -->
+    <button  onclick="show_more()" class="bt title">Plus Items</button>
+    
+    <div id="show" hidden>
+    <div class="item" id="item4">
+      <div class="buttons">
+        <!-- <span class="delete-btn"></span> -->
+        <a href="#" class="delete-btn" onclick="remove(4);"> 
+          <i class="fa fa-remove" style="font-size:24px"></i>
+        </a>
+        <span class="like-btn"></span>
+      </div>
+
+      <div class="image">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0SEA0PDxMVEBEQDRAVEhUNGQ8NFRANFRUXFhkdFR8kHDQhJCYxHBcfLT0tJjU3MDA6Fx8zOj8vNyguLzcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAFAAeAMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcFCAIDBAH/xAA6EAABAwMBBQUFBAsBAAAAAAABAAIDBAURIQYHEjFBE0JRcZEiMmGhsRQjUoEzYmNyc4KSotHS8CT/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AvFERAREQEREBERAREQEREBERAREQERVvvT2nr6J8IppWxMfDrljJT2vEeWR4YQWQuJI66LWWp2vvUmc1VQQefZufD8mgfJcrDaKi4uLZKyGNwdjFZJM958MAtwfLOUGxk93o4/0k8TMfjfGz6leF+2Fnboa6kB/jwf7KvKPcjGcGorHOH4YGdkPUuOfRSu3brrHCAPswlcBq+Zz3E+YBx8kGfoNobfOeGCqgmce7FLDIfQHKyqhF33W2SdpDYBTv7r6cuYQfLOFF6CXaO01cNI4PudFK8NjceN7mNz3Xc2kDo7TTQ9UFvoiICIiAiIgIiICrLfjTf+ehmx7lZwE/vscR82/NWao1vDs7qu21kLBmQM7SIDmZYyHgDzwR/MgoJdVRTBwyPZcOTh7J+XRIJgQCORGV3AoPlr2tutIxhp6iQNOnDITLGx4OMAH2QcYWbpt5W0DxpOwAdeyh/wAKR7qLfLJb7pG5vHFMyTgY8DHalpAx6fRVjbpsfdkYIJ/qHMIJmzeLfwc9vE/4Pijb9BlZSj3uXNmk9NFK0czCXxO9CSFCAVyCC0qDfTa3ECojlpidNQJWjzI1UhbvHsXB2grI+Ec9Jc+nDla/XqjY+MnHtMGc/q9QuOyWwtyrHNkpoC6EEgySFjGcQHIEnX8kFy12+W2NyKaKoqj0LGCJh/Nxz8lg6ne1c5NKekhpx41D31DvPDeEeqyFo3TPwz7VO1oGMsp2knr3joOZ6FTW07F22nwWQh7h35/vT54Og/IIK+tZ2kuJw6pkjiPvOgaKRgHXDmjjJ8ippsk1lPU1VvD3yGOOJ5c8lxy4ZJJJz3hzUtAAGBoAvgaMkgAE8z4+CDmiIgIiIKM3kbDzUs0lXSRukpZXl72xDidTynV2g7uc8uWqiVkt1RWSCnpWOe55w52C1sTDzLzjAGFtAuLWjoMIMZs5Z4qOmhpo+TG6n8T+pVD719nnUNwMrBiCrJkjI5CXOXt9TnycFsasJtbs5T3CmfTT6A+0x7feilHuub/3UoNcY5eoXa1ybQbPV1tk7KqYeDOI5mAujlb0weh+B1XkiqW40I9UHfXv+7k+Ix66LYzYq2/ZrfQwYw5lMwuH7Vw43f3OKo7YSxvuFbCwDNPA9klQ7u8LTlrM8jkj6+C2MQfUREBERAREQEREBERAREQdNRTxyNLJGNkY7RzZAHtI+IOhUan3cWF7uI0UQPgztIm+jSApWiDxW22U9OwRU0TIYx3Ymhgz4nHMr2oiAiIgIiICIiD/2Q=="  alt="">
+      </div>
+
+      <div class="description">
+        <span>Common Projects</span>
+        <span>Bball High</span>
+        <span>White</span>
+      </div>
+      
+       <div class="quantity">
+        <button id='plus4' class="plus-btn" onclick="plus(4);multiply(4);">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <h6 id='compteur4'class="display">0</h6>
+        <button id='moins4' class="minus-btn" onclick="moins(4);multiply(4);">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+        <div id="price4" class="total-price display">600</div>
+          
+      </div>
+      <div><p class="title" id="TOTAL4"></p></div>
+
+    </div>
+    </div>
+  </div>
+        <script type="text/javascript" src="monscript.js"></script>
+    </body>
+</html>
